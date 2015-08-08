@@ -1,0 +1,26 @@
+﻿{
+	"name":"Github Translator",
+	"version":"0.1",
+	"manifest_version":2,
+	"description":"可以把Github的界面翻译为中文",
+	"icons":{ 
+		"16": "icon16.png",             
+		"48": "icon48.png",            
+		"128": "icon128.png" 
+	},
+	"background": {
+		"scripts":["core.js"],
+		"persistent": false
+	},
+	"page_action":{
+		"default_icon": "pa_cm.png",
+		"default_title": "翻译Github"
+	},
+	"permissions":[
+		"contextMenus"
+	],
+	"content_scripts": [{
+      "matches": ["https://github.com/*","https://*.github.com/*"],
+      "js": ["jquery.js","translator.js","ongithub.js"]
+    }]
+}
